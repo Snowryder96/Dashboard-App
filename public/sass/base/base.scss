@@ -1,0 +1,26 @@
+body{
+    background-color: #ECF0F1;
+    font-family: 'Ubuntu', sans-serif;
+}
+*{
+    overflow-x: hidden;
+}
+main{
+    width:100%;
+    margin: 0;
+    
+}
+ul{
+    list-style: none;
+    padding: none;
+    margin: none;
+}
+.list-group-item{
+    color: #0069D9;
+    .label{
+        color: black;
+    }
+    &:hover{
+        color:#0069D9;
+    }
+}

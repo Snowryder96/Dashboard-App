@@ -1,0 +1,14 @@
+.delivery{
+    display: flex;
+    justify-content: space-evenly;
+}
+.table-card{
+    background-color: white;
+    -webkit-box-shadow: 5px 5px 21px -12px rgba(0,0,0,0.75);
+    -moz-box-shadow: 5px 5px 21px -12px rgba(0,0,0,0.75);
+    box-shadow: 5px 5px 21px -12px rgba(0,0,0,0.75);
+}
+.table-responsive{
+    padding: 4rem;
+
+}

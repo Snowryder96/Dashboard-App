@@ -1,0 +1,44 @@
+.btn-success{
+    background-color: white;
+    color: limegreen;
+    border: 2px solid limegreen;
+    &:hover{
+        background-color: limegreen;
+        border: 2px solid limegreen;
+        -webkit-box-shadow: 0px 0px 13px -4px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0px 0px 13px -4px rgba(0,0,0,0.75);
+        box-shadow: 0px 0px 13px -4px rgba(0,0,0,0.75);
+    }
+}
+.btn-primary{
+    background-color: white;
+    color: #0069D9;
+    border: 2px solid #0069D9;
+    &:hover{
+        background-color: #0069D9;
+        border: 2px solid #0069D9;
+        -webkit-box-shadow: 0px 0px 13px -4px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0px 0px 13px -4px rgba(0,0,0,0.75);
+        box-shadow: 0px 0px 13px -4px rgba(0,0,0,0.75);
+    }
+}
+.btn-view{
+    &:hover{
+        background-color: lightgray;
+    }
+}
+.btn-link{
+    color: black;
+    &:hover{
+        text-decoration: none;
+    }
+    &:active{
+        text-decoration: none;
+    }
+    &:visited{
+        text-decoration: none;
+    }
+    &:focus{
+        text-decoration: none;
+    }
+}

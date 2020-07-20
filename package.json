@@ -1,0 +1,30 @@
+{
+  "name": "dashboard-app",
+  "version": "1.0.0",
+  "description": "Simple dashboard",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "compile:sass": "node-sass public/sass/main.scss public/css/style.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Snowryder96/Dashboard-App.git"
+  },
+  "keywords": [
+    "material",
+    "design",
+    "dashboard"
+  ],
+  "author": "Alexis Masuy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Snowryder96/Dashboard-App/issues"
+  },
+  "homepage": "https://github.com/Snowryder96/Dashboard-App#readme",
+  "devDependencies": {
+    "node-sass": "^4.14.1"
+  }
+}
