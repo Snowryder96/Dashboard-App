@@ -1,12 +1,83 @@
 <!DOCTYPE html>
-<html>
+<html data-theme="light">
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}NoteBoard{% endblock %}</title>
+        {# <link rel="stylesheet" href="/css/bootstrap.min.css"> #}
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <link rel="stylesheet" href="/css/app.css">
+        <link rel="stylesheet" href="/css/all.min.css">
+        <link rel="stylesheet" href="/css/style.css">
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+        {% include 'partials/header.html.twig' %}
+        <main>
+        {% for label, messages in app.flashes %}            
+        <div class="container pt-5  text-center mt-5">
+            <div class="alert alert-{{label}}">
+                {% for message in messages %}                        
+                <p class="m-0">
+                    {{ message | raw }}
+                </p>
+                {% endfor %}                
+            </div>
+        </div>
+        {% endfor %}      
+            {% block body %}{% endblock %}
+        </main>
+        
+        {% include 'partials/footer.html.twig'%}
+        
+        <script src="/js/jquerry.min.js"></script>
+        
+        <script src="/js/popper.min.js"></script>
+        <script src="/js/bootstrap.min.js"></script>
+        <script src="/js/navbar.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/lax.js" ></script>
+        <script>
+            let darkMode = localStorage.getItem("darkMode");
+            var checkbox = document.querySelector('#nightSwitch');
+            var menuIcon = document.querySelector("#menuIcon");
+            var themeStatus = document.getElementById('theme-status')
+            
+            {# let trans = () => {
+                document.documentElement.classList.add('transition');
+                window.setTimeout(() => {
+                    document.documentElement.classList.remove('transition');
+                }, 300)
+            } #}
+            console.log(themeStatus.html )
+            console.log(darkMode)
+            if(darkMode === "enabled"){
+                document.documentElement.setAttribute('data-theme','dark');
+                localStorage.setItem("darkMode", "enabled");
+                checkbox.checked = true;
+                menuIcon.style.color = "white"
+                themeStatus.innerHTML = "Dark mode"
+            }
+            
+            checkbox.addEventListener('change', function(){
+                darkMode = localStorage.getItem("darkMode");
+                if(this.checked ){
+                    console.log(darkMode)
+                    document.documentElement.setAttribute('data-theme','dark');
+                    localStorage.setItem("darkMode", "enabled");
+                    menuIcon.style.color = "white"
+                    themeStatus.innerHTML = "Dark mode"
+                    console.log(themeStatus.html )
+                } else {
+                    console.log(darkMode)
+                    document.documentElement.setAttribute('data-theme','light');
+                    localStorage.setItem("darkMode", null)
+                    menuIcon.style.color = "black"
+                    console.log(themeStatus.html )
+                    themeStatus.innerHTML = "Light mode"
+                }
+            })
+            
+        </script>
         {% block javascripts %}{% endblock %}
     </body>
 </html>

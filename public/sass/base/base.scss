@@ -1,22 +1,55 @@
+
+html {
+    scroll-behavior: smooth;
+    --bg: #ECF0F1;
+    --bg-panel: white;
+    --color-text: rgb(49, 49, 49);
+    --primary: #0069D9;
+    --transparantWhite: transparent;
+    
+  }
+html[data-theme='dark'] {
+    scroll-behavior: smooth;
+    --bg: #333333;
+    --bg-panel: #2A2E32;
+    --color-text: rgb(231, 231, 231);
+    --primary: white;
+    --transparantWhite: white;
+}
+.text-primary{
+    color: var(--primary);
+}
 body{
-    background-color: #ECF0F1;
+    background-color: var(--bg);
+    color: var(--color-text);
+    transition: .1s;
     font-family: 'Ubuntu', sans-serif;
 }
+body::-webkit-scrollbar{
+    display: block;
+    width: .5rem;
+}
+body::-webkit-scrollbar-track{
+    background: inherit;
+}
+body::-webkit-scrollbar-thumb{
+    background: #858585;
+    border-radius: 25px;
+    width: .8rem;
+}
+
+
 *{
     overflow-x: hidden;
 }
-main{
-    width:100%;
-    margin: 0;
-    
-}
+
 ul{
     list-style: none;
     padding: none;
     margin: none;
 }
 .list-group-item{
-    color: #0069D9;
+    color: var(--primary);
     .label{
         color: black;
     }
@@ -24,3 +57,59 @@ ul{
         color:#0069D9;
     }
 }
+.title{
+    color: var(--primary);
+}
+
+input#nightSwitch[type=checkbox]{
+	height: 0;
+	width: 0;
+	visibility: hidden;
+}
+
+label.darkMode {
+	cursor: pointer;
+	text-indent: -9999px;
+	width: 52px;
+	height: 27px;
+	background: var(--primary);
+	float: right;
+	border-radius: 100px;
+    position: relative;
+    border: 1px solid var(--transparantWhite);
+    
+}
+
+label.darkMode:after {
+	content: '';
+	position: absolute;
+	top: 3px;
+	left: 3px;
+	width: 20px;
+	height: 20px;
+    background: #fff;
+	border-radius: 90px;
+	transition: 0.3s;
+}
+
+input#nightSwitch:checked + label {
+	background: var(--bg);
+}
+
+
+input#nightSwitch:checked + label:after {
+	left: calc(100% - 5px);
+    transform: translateX(-100%);
+}
+
+label.darkMode:active:after {
+	width: 45px;
+}
+// html.transition,
+// html.transition *,
+// html.transition *:before,
+// html.transition *:after {
+//   transition: all 700ms !important;
+//   transition-delay: 0 !important;
+// }
+

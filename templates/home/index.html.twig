@@ -3,18 +3,58 @@
 {% block title %}Hello HomeController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Users/masuy/code/dashboard-app/Dashboard-App/src/Controller/HomeController.php'|file_link(0) }}">src/Controller/HomeController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Users/masuy/code/dashboard-app/Dashboard-App/templates/home/index.html.twig'|file_link(0) }}">templates/home/index.html.twig</a></code></li>
-    </ul>
+<div class="home-header py-5 mb-5 text-center lax"  data-lax-translate-y="0 0, 1200 -200"> 
 </div>
+<section class="presentation text-center my-5" >
+    <h2 style="">Voir plus</h2>
+    <h2 class="my-5">compétences</h2>
+    <div class="row justify-content-around">
+        <div class="card-shadow col-md-2">
+            <h3>html</h3>
+        </div>
+        <div class="card-shadow col-md-2">
+            <h3>css</h3>
+        </div>
+        <div class="card-shadow col-md-2">
+            <h3>javascript</h3>
+        </div>
+        <div class="card-shadow col-md-2">
+            <h3>php</h3>
+        </div>
+        <div class="card-shadow col-md-2">
+            <h3>SQL</h3>
+        </div>
+    </div>
+    
+</section>
+<section class="home text-center">
+    <div class="row justify-content-center">
+        <div class="col-md-4 card m-4 lax" data-lax-translate-x="300 0, 500 -100" data-lax-opacity="300 1, 500 0" data-lax-anchor="self" >
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque tenetur sint adipisci natus dolorem consectetur tempora, in molestiae enim debitis ullam commodi ut perspiciatis quis vero obcaecati? Minus, minima eum.</p>
+        </div>
+        <div class="col-md-4 card m-4 lax" data-lax-translate-x="300 0, 1000 1600" data-lax-opacity="300 1, 500 0" data-lax-anchor="self">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque tenetur sint adipisci natus dolorem consectetur tempora, in molestiae enim debitis ullam commodi ut perspiciatis quis vero obcaecati? Minus, minima eum.</p>
+        </div>
+    </div>
+    <h1 class="lax" data-lax-translate-y="400 0, 1100 -100">test</h1>
+</section>
+<section class="home">
+    <div class="background-1 lax" data-lax-translate-y="400 0, -100 0">
+    </div>
+</section>
+<script>
+    window.onload = function() {
+	lax.setup() // init
+
+	const updateLax = () => {
+		lax.update(window.scrollY)
+		window.requestAnimationFrame(updateLax)
+	}
+    window.addEventListener('scroll', function(e){
+        console.log(window.scrollY)
+    })
+	window.requestAnimationFrame(updateLax)
+}
+</script>
 {% endblock %}
+

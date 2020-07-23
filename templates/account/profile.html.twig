@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+{% block title %}Modification du profil utilisateur{% endblock %}
+{% block body %}
+<section class="row px-5" style="margin-top: 8rem">
+    <aside class="col" >
+        <div class="card p-4 mb-5">
+            <div class="row pb-3" style="border-bottom: 2px solid var(--primary);">
+                <img class="profile-pic" style="height: 90px; width:90px; margin: 0 20px auto" src="{{app.user.picture}}" alt="">
+                <div class="col-sm-12">
+                    <h4 class="m-2">{{ app.user.firstname }} {{app.user.lastname}}&nbsp;</h4>  
+                    <p class="m-1">{{app.user.introduction}}</p>  
+                </div>
+            </div>
+            <p class="my-4">{{app.user.description}}</p>  
+            
+        </div>
+        
+    </aside>
+    <div class="col-md-4 card-shadow px-5">
+        <h1 class="title my-4">Modification du profil</h1>
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+
+        <button type="submit" class="btn">Enregistrer les modifications</button>
+        {{ form_end(form) }}
+    </div>
+</section>
+    
+{% endblock %}
