@@ -3,22 +3,35 @@
 	<button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"><i class="fas fa-bars" id="menuIcon"></i></span></button>
 	<div class="navbar-collapse collapse" id="navbarColor02" style="">
 		<ul class="navbar-nav mr-auto text-center">
-			<li class="nav-item"><a class="nav-link" href="{{ path('ressources') }}" data-active="false">Notebook</a></li>
+			<li class="nav-item"><a class="nav-link" href="{{ path('notebook') }}" data-active="false">Notebook</a></li>
 			<li class="nav-item"><a class="nav-link" href="{{ path('ressources') }}" data-active="false">Ressources</a></li>
 			<li class="nav-item"><a class="nav-link" href="{{ path('about') }}" data-active="false">About</a></li>
+			
 			
 			
 		</ul>
 		<ul class="navbar-nav ml-auto text-center">
 		
 		{% if app.user  %}  
+		
 			{# <li class="nav-item">
 					
 					<a href="{{ path('account_profile') }}" class="nav-link text-capitalize pt-2" style="font-size:1.4rem;">{{ app.user.firstname }}</a>
                 </li> #}
+			 
 			<li class="nav-item pt-3 mx-3"><input type="checkbox" id="nightSwitch" name="theme"><label class="darkMode" for="nightSwitch"></label><span id="theme-status" class="px-4">Dark mode</span>	</li>
+			<li class="nav-item dropdown mr-1">
+				<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{ app.user.firstname }} {{ app.user.lastname }}</a>
+				<div class="dropdown-menu ">
+				<a class="dropdown-item" href="#">Action</a>
+				<a class="dropdown-item" href="#">Another action</a>
+				<a class="dropdown-item" href="#">Something else here</a>
+				<div class="dropdown-divider"></div>
+				<a class="dropdown-item" style="color:red" href="{{ path('account_logout') }}">Logout</a>
+				</div>
+			</li>
 			<li class="nav-item" style="margin: auto 0;">
-                    <a href="{{ path('account_profile') }}" class="nav-link text-capitalize"><img class="img-fluid profile-enlarge" id="profile-pic" src="{{app.user.picture}}"></a>
+                    <a href="{{ path('account_profile') }}" class="nav-link text-capitalize" ><img class="img-fluid profile-enlarge" id="profile-pic" src="{{app.user.picture}}"></a>
                 </li>
 			
 			{# <li class="nav-item">

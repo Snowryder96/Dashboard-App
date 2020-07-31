@@ -1,0 +1,20 @@
+.dropdown-menu{
+    background-color: var(--bg);
+    color: var(--text-color);
+    .dropdown-item{
+        color:var(--text-color);
+        &:hover{
+            color: var(--bg);
+            background-color: var(--primary);
+        }
+        &:active{
+            color: var(--bg);
+            background-color: var(--primary);
+        }
+    }
+    
+    
+}
+.dropdown-toggle{
+    margin-top: .6rem;
+}

@@ -1,0 +1,12 @@
+.list-group{
+    
+    .list-group-item{
+        background-color: var(--bg);
+        color: var(--text-color);
+        &:hover{
+            color: var(--bg);
+            background-color: var(--primary);
+
+        }
+    } 
+}

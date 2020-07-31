@@ -1,12 +1,14 @@
 {% extends 'base.html.twig' %}
 {% block title %}Inscription{% endblock %}
 {% block body %}
-<div class="container">
-    <h1 class="text-primary my-4">Inscrivez vous ! </h1>
+<section class="container" style="margin-top: 11rem;">
+    <div class="card p-4">
+        <h1 class="text-primary my-4">Inscrivez vous ! </h1>
 
-    {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button type="submit" class="btn btn-success">Confirmez l'inscription</button>
-    {{ form_end(form) }}
-</div>
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <button type="submit" class="btn btn-success">Confirmez l'inscription</button>
+        {{ form_end(form) }}
+    </div>
+</section>
 {% endblock %}

@@ -19,11 +19,13 @@ html[data-theme='dark'] {
 .text-primary{
     color: var(--primary);
 }
+
 body{
     background-color: var(--bg);
     color: var(--color-text);
     transition: .1s;
     font-family: 'Ubuntu', sans-serif;
+    overflow-x: hidden;
 }
 body::-webkit-scrollbar{
     display: block;
@@ -37,17 +39,13 @@ body::-webkit-scrollbar-thumb{
     border-radius: 25px;
     width: .8rem;
 }
-
-
-*{
-    overflow-x: hidden;
+.section{
+    margin-top: 6rem;
 }
 
-ul{
-    list-style: none;
-    padding: none;
-    margin: none;
-}
+
+
+
 .list-group-item{
     color: var(--primary);
     .label{

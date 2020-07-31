@@ -21,7 +21,8 @@ body {
   background-color: var(--bg);
   color: var(--color-text);
   transition: .1s;
-  font-family: 'Ubuntu', sans-serif; }
+  font-family: 'Ubuntu', sans-serif;
+  overflow-x: hidden; }
 
 body::-webkit-scrollbar {
   display: block;
@@ -35,13 +36,8 @@ body::-webkit-scrollbar-thumb {
   border-radius: 25px;
   width: .8rem; }
 
-* {
-  overflow-x: hidden; }
-
-ul {
-  list-style: none;
-  padding: none;
-  margin: none; }
+.section {
+  margin-top: 6rem; }
 
 .list-group-item {
   color: var(--primary); }
@@ -156,10 +152,33 @@ label.darkMode:active:after {
   height: 50px;
   width: 50px; }
 
+.dropdown-menu {
+  background-color: var(--bg);
+  color: var(--text-color); }
+  .dropdown-menu .dropdown-item {
+    color: var(--text-color); }
+    .dropdown-menu .dropdown-item:hover {
+      color: var(--bg);
+      background-color: var(--primary); }
+    .dropdown-menu .dropdown-item:active {
+      color: var(--bg);
+      background-color: var(--primary); }
+
+.dropdown-toggle {
+  margin-top: .6rem; }
+
+.list-group .list-group-item {
+  background-color: var(--bg);
+  color: var(--text-color); }
+  .list-group .list-group-item:hover {
+    color: var(--bg);
+    background-color: var(--primary); }
+
 nav.navbar {
   background-color: var(--bg);
   position: fixed;
-  z-index: 2;
+  top: 0;
+  z-index: 1;
   width: 100%; }
   nav.navbar .nav-link {
     color: var(--primary);
@@ -197,6 +216,9 @@ div.home-header {
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%; }
+
+.noteboard {
+  background-color: var(--bg); }
 
 .profile-banner {
   width: 100vw;

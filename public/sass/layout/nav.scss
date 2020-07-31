@@ -1,7 +1,8 @@
 nav.navbar{
     background-color: var(--bg);
     position: fixed;
-    z-index: 2;
+    top:0;
+    z-index: 1;
     width: 100%;
     .nav-link{
         color: var(--primary);

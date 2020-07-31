@@ -34,4 +34,13 @@ class HomeController extends AbstractController
             'controller_name' => 'HomeController',
         ]);
     }
+    /**
+     * @Route("/notebook", name="notebook")
+     */
+    public function notebook()
+    {
+        return $this->render('notebook/notebook.html.twig', [
+            'controller_name' => 'HomeController',
+        ]);
+    }
 }
